@@ -1,6 +1,6 @@
 # Python-pair-wise-comparison-letter-generator
 
-Using python to generate letter representations from pair-wise significance tests using the Piepho method
+Using python to generate letter representations from pair-wise significance tests using the [Piepho method](http://dx.doi.org/10.1198/1061860043515).
 
 
 ## Getting Started
