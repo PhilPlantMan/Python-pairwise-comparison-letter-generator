@@ -12,7 +12,7 @@ ___
 
 ## How to use
 
-**Step 1: **Generate pairwise comparison table
+**Step 1:** Generate pairwise comparison table
 There are a number of libraries that that provide statistical tests, the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libaries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
 
 Example taken from `if __name__ == "__main__"` of: `pairwisecomp_letters.py`
@@ -51,7 +51,7 @@ Output:
 ___
 
 **Step 2:** Convert pairwise comparisons to a letter representation of significance 
-The function `multi_comparisons_letter_df_generator()` takes the dataframe of pairwise comparisons (`pairwise_comps_df`) and returns a dataframe with an index all individual groups and a string of their respective significance letters. The order that letters appear in the output can be controlled by providing a numerical `pd.series` or n x 1 shaped `pd.dataframe` with the same index as the output of `multi_comparisons_letter_df_generator()`. For example, for use with boxplots, it is logical for the group with the largest median to take the letter ‘a’. To achieve this, a dateframe with the media values for each group is passed to the `letter_ordering_series` of `multi_comparisons_letter_df_generator()`. 
+The function `multi_comparisons_letter_df_generator()` takes the dataframe of pairwise comparisons (`pairwise_comps_df`) and returns a dataframe with an index of all individual groups and a string of their respective significance letters. The order that letters appear in the output can be controlled by providing a numerical `pd.series` or n x 1 shaped `pd.dataframe` with the same index as the output of `multi_comparisons_letter_df_generator()`. For example, for use with boxplots, it is logical for the group with the largest median to take the letter ‘a’. To achieve this, a dateframe with median values for each group is passed to the `letter_ordering_series`argument of `multi_comparisons_letter_df_generator()`. 
 
 Continuation of the code example above:
 ```python
@@ -70,7 +70,7 @@ print(letter_df.head(5)
 Output:
 
 |  Index          | string   |
-| :------------|:---------|
+| :------------:|:---------:|
 |  Africa│1952 | a        |
 |  Africa│1957 | ab       |
 |  Africa│1962 | ab       |
