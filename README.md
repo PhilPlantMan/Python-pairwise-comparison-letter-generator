@@ -15,7 +15,7 @@ ___
 
 ## How to use
 
-**Step 1:** Generate pairwise comparison table
+**Step 1:** Generate a pairwise comparison table
 
 There are a number of libraries that that provide statistical tests; the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libaries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
 
