@@ -8,11 +8,11 @@ ___
 
 Line-based significance representation (http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/)
 
-![Line based representation](http://www.sthda.com/english/sthda-upload/images/ggpubr/add-pvalues-to-ggplots.png)
+![Line based representation](https://github.com/PhilPlantMan/Python-pair-wise-comparison-letter-generator/Life expectency years tukey 0v2 -05.png)
 
-Letter-based significance representation (http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/)
 
-![Line based representation](http://www.sthda.com/english/sthda-upload/images/ggpubr/add-pvalues-to-ggplots.png)
+
+
 ___
 
 ##How to use
