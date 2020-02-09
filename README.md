@@ -5,7 +5,7 @@ Collection of python functions to generate letter representations of pairwise si
 ## Purpose
 Currently there is no easy way to represent pairwise significance tests in a letter-based system in python. This is possible in R and most other statistics platforms such as SPSS and Minitab. Such a feature makes it much easier for someone to determine pairwise comparisons from figures with more than just a few treatments than a 'line' based representation. 
 ___
-**Figure 1: Letter based representation of pairwise significance tests. Groups that share at least 1 letter are not significantly different (ANOVA with Tukey posthoc test, p < 0.05)**
+**Figure 1: Letter based representation of pairwise significance tests. Groups that share at least 1 letter are not significantly different (ANOVA with Tukey posthoc test, p < 0.05). Generated with custom_boxplot_functions.py*
 
 ![Line based representation](https://github.com/PhilPlantMan/Python-pair-wise-comparison-letter-generator/blob/master/Life%20expectency%20years%20tukey%200v2%20-05.png)
 ___
@@ -13,7 +13,8 @@ ___
 ## How to use
 
 **Step 1:** Generate pairwise comparison table
-There are a number of libraries that that provide statistical tests, the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libaries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
+
+There are a number of libraries that that provide statistical tests; the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libaries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
 
 Example taken from `if __name__ == "__main__"` of: `pairwisecomp_letters.py`
 ```python
@@ -51,6 +52,7 @@ Output:
 ___
 
 **Step 2:** Convert pairwise comparisons to a letter representation of significance 
+
 The function `multi_comparisons_letter_df_generator()` takes the dataframe of pairwise comparisons (`pairwise_comps_df`) and returns a dataframe with an index of all individual groups and a string of their respective significance letters. The order that letters appear in the output can be controlled by providing a numerical `pd.series` or n x 1 shaped `pd.dataframe` with the same index as the output of `multi_comparisons_letter_df_generator()`. For example, for use with boxplots, it is logical for the group with the largest median to take the letter ‘a’. To achieve this, a dateframe with median values for each group is passed to the `letter_ordering_series`argument of `multi_comparisons_letter_df_generator()`. 
 
 Continuation of the code example above:
@@ -78,14 +80,14 @@ Output:
 |  Africa│1987 | d        |
 
 
-As described by Piepho, the combination of letters and groups can differ depending on how the order the letters are ’swept’. The returned set of letters remain accurate but may not be the minimum set of letters. Therefor, to optimise the returned letter set, multiple cycles of calculations are recommended. The number of cycles of letter determination are controlled by the function argument `monte_carlo_cycles` (default = 5). The ‘fitness’ parameter of the optimisation can be controlled by the function argument primary_optimisation_parameter (default = "Number of different letters"):
-+ 'Number of different letter' optimises for fewest different letters
+As described by Piepho, the combination of letters and groups can differ depending on the order the letters are ’swept’. The returned set of letters remain accurate but may not be the minimum set of letters. Therefor, to optimise the returned letter set, multiple cycles of calculations are recommended. The number of cycles of letter determination is controlled by the function argument `monte_carlo_cycles` (default = 5). The ‘fitness’ parameter of the optimisation can be controlled by the function argument primary_optimisation_parameter (default = "Number of different letters"):
++ 'Number of different letters' optimises for fewest different letters
 + "Min letters per row" optimises for the fewest letters assigned per treatment
 + "Letter total" optimises for the fewest total letters of the treatments combined
 
 ## Annoting a boxplot with letter representations of signficance
 
-The dataframe with letter representations of significance (`letters_df`) can be used to annotate many different types of plot. The most useful application for me is with boxplots. In this repository, I have also provided the script `custom_boxplot_functions.py` that I used to generate figure 1 in conjunction with `pairwisecomp_letters.py`. The boxplot uses Seaborn grouped-boxplot. 
+The dataframe with letter representations of significance (`letters_df`) can be used to annotate many different types of plot. The most useful application for me is with boxplots. In this repository, I have also provided the script `custom_boxplot_functions.py` that I used to generate **Figure 1** in conjunction with `pairwisecomp_letters.py`. The boxplot uses Seaborn grouped-boxplot. 
 
 ### Prerequisites
 
