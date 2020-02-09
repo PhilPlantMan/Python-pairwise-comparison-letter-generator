@@ -1,6 +1,6 @@
-# Python pairwise comparisons: letter representations
+# Python pairwise comparisons: Letter representations
 
-Collection of python functions to generate letter representations of pairwise significance tests using the method described by [Piepho (2004)](http://dx.doi.org/10.1198/1061860043515). This method is applicable to any significance test that returns a table of pairwise comparisons that describe whether to reject the null hypothesis for each pairing or not.
+Collection of python functions to generate letter representations of pairwise significance tests based on the method described by [Piepho (2004)](http://dx.doi.org/10.1198/1061860043515). This method is applicable to any significance test that returns a table of pairwise comparisons that describe whether to reject the null hypothesis for each pairing or not.
 
 ## Purpose
 Currently there is no easy way to represent pairwise significance tests in a letter-based system in python. This is possible in R and most other statistics platforms such as SPSS and Minitab. Such a feature makes it much easier for someone to determine pairwise comparisons from figures with more than just a few treatments than a 'line' based representation. 
@@ -11,13 +11,15 @@ ___
   <img width="520" height="400" src="https://github.com/PhilPlantMan/Python-pair-wise-comparison-letter-generator/blob/master/Life%20expectancy%20years%20tukey%200v2%20-05.png">
 </p>
 
+![test](https://github.com/PhilPlantMan/Python-pair-wise-comparison-letter-generator/blob/master/Life%20expectancy%20years%20tukey%200v2%20-05.png)
+
 ___
 
 ## How to use
 
 **Step 1:** Generate a pairwise comparison table
 
-There are a number of libraries that that provide statistical tests; the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libraries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
+There are a number of libraries that provide statistical tests; the most popular are Statsmodels and Scikit-posthocs. The outputs of the functions from these libraries differ slightly and the function `post_hoc_df()` in `pairwisecomp_letters.py` can be used with functions from either of these libraries. A Tukey postdoc test function from both of these libraries have been included in `post_hoc_df()` to serve as an example of how other tests can be written into this function.
 
 Example taken from `if __name__ == "__main__"` of: `pairwisecomp_letters.py`
 ```python
