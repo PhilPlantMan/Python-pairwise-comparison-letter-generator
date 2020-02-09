@@ -68,7 +68,8 @@ for row in median_df.index:
 median_df.set_index('comb', drop = True, inplace = True)
 df['comb'] = df[X_col].map(str) + "│" + df[hue_col].map(str)    
 #Convert pairwise comparisons to letters representation    
-letters_df = multi_comparisons_letter_df_generator(pairwise_comps_df, letter_ordering_series = median_df)
+letters_df = multi_comparisons_letter_df_generator(pairwise_comps_df, 
+                                                   letter_ordering_series = median_df)
 print(letter_df.head(5)
 ```
 
