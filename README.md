@@ -79,10 +79,13 @@ Output:
 
 
 As described by Piepho, the combination of letters and groups can differ depending on how the order the letters are ’swept’. The returned set of letters remain accurate but may not be the minimum set of letters. Therefor, to optimise the returned letter set, multiple cycles of calculations are recommended. The number of cycles of letter determination are controlled by the function argument `monte_carlo_cycles` (default = 5). The ‘fitness’ parameter of the optimisation can be controlled by the function argument primary_optimisation_parameter (default = "Number of different letters"):
-        'Number of different letter' optimises for fewest different letters
-        "Min letters per row" optimises for the fewest letters assigned per treatment
-        "Letter total" optimises for the fewest total letters of the treatments combined
++ 'Number of different letter' optimises for fewest different letters
++ "Min letters per row" optimises for the fewest letters assigned per treatment
++ "Letter total" optimises for the fewest total letters of the treatments combined
 
+## Annoting a boxplot with letter representations of signficance
+
+The dataframe with letter representations of significance (`letters_df`) can be used to annotate many different types of plot. The most useful application for me is with boxplots. In this repository, I have also provided the script `custom_boxplot_functions.py` that I used to generate figure 1 in conjunction with `pairwisecomp_letters.py`. The boxplot uses Seaborn grouped-boxplot. 
 
 ### Prerequisites
 
